@@ -20,7 +20,7 @@ const LandingPage = ({ people, selectedPerson, selectPerson, fetchPeople }) => (
 );
 
 LandingPage.getInitialProps = async ({ store }) => {
-  await store.dispatch(fetchPeople);
+  await store.dispatch(fetchPeople());
 };
 
 const mapStateToProps = state => {
