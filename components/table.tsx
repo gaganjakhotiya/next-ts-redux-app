@@ -8,6 +8,7 @@ import TablePagination from "@material-ui/core/TablePagination";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Link from "next/link";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -56,12 +57,14 @@ export default function PersonTable({ rows }) {
           </TableHead>
           <TableBody>
             {getVisibleRows().map((row, i) => (
-              <TableRow key={row.id}>
-                <TableCell>{row["id"]}</TableCell>
-                <TableCell align="right">{row["name"]}</TableCell>
-                <TableCell align="right">{row["age"]}</TableCell>
-                <TableCell align="right">{row["sex"]}</TableCell>
-              </TableRow>
+              <Link key={row.id} href={`/person/${row.id}`}>
+                <TableRow style={{ cursor: "pointer" }}>
+                  <TableCell>{row["id"]}</TableCell>
+                  <TableCell align="right">{row["name"]}</TableCell>
+                  <TableCell align="right">{row["age"]}</TableCell>
+                  <TableCell align="right">{row["sex"]}</TableCell>
+                </TableRow>
+              </Link>
             ))}
           </TableBody>
         </Table>

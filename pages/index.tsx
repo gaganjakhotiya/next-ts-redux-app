@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { selectPerson, fetchPeople } from "store/actions/people";
 import Table from "../components/table";
 
-const LandingPage = ({ people, selectedPerson, selectPerson, fetchPeople }) => (
+const LandingPage = ({ people }) => (
   <div>
     <h2 className="title">People Directory</h2>
     <Table rows={people} />
