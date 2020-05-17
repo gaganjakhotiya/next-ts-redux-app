@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import sampleReducer from "./sample";
+import people from "./people";
 
-export default combineReducers({ posts: sampleReducer });
+export default combineReducers({ people: people });

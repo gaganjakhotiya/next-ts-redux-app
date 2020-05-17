@@ -1,20 +1,35 @@
-import React from "react";
 import { connect } from "react-redux";
+import { selectPerson, fetchPeople } from "store/actions/people";
 
-class App extends React.Component {
-  // static getInitialProps({ store }) {}
+const LandingPage = ({ people, selectedPerson, selectPerson, fetchPeople }) => (
+  <div>
+    <div>Hey, bro!</div>
+    <button onClick={() => fetchPeople()}>Get Data</button>
+    <ul>
+      {people.map(p => (
+        <li
+          key={p.id}
+          onClick={selectPerson(p.id)}
+          style={selectedPerson == p.id ? { color: "red" } : {}}
+        >
+          {p.name}
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
-  constructor(props) {
-    super(props);
-  }
+LandingPage.getInitialProps = async ({ store }) => {
+  await store.dispatch(fetchPeople);
+};
 
-  render() {
-    return <div>Hey, there!</div>;
-  }
-}
+const mapStateToProps = state => {
+  return {
+    people: state.people?.people || [],
+    selectedPerson: state.people.selectedPerson
+  };
+};
 
-const mapStateToProps = _state => ({});
+const mapDispatchToProps = { selectPerson, fetchPeople };
 
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);
