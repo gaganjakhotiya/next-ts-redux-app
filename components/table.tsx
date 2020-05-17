@@ -56,7 +56,7 @@ export default function PersonTable({ rows }) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {getVisibleRows().map((row, i) => (
+            {getVisibleRows().map(row => (
               <Link key={row.id} href={`/person/${row.id}`}>
                 <TableRow style={{ cursor: "pointer" }}>
                   <TableCell>{row["id"]}</TableCell>
