@@ -4,6 +4,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 This project uses TypeScript, Redux, Redux-Thunk apart from the basic Next.js React setup.
 
+## Test Link
+
+https://next-ts-redux-app.gaganjakhotiya.now.sh/
+
 ## Getting Started
 
 First, run the development server:
