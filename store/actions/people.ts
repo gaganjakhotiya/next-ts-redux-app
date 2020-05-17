@@ -8,7 +8,7 @@ export const selectPerson = (id: Number) => ({
 export const fetchPeople = () => {
   return async dispatch => {
     const payload = await fetchPeopleSync();
-    return dispatch(receivePeople(payload.slice(0, 5)));
+    return dispatch(receivePeople(payload));
   };
 };
 

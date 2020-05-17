@@ -1,21 +1,20 @@
 import { connect } from "react-redux";
 import { selectPerson, fetchPeople } from "store/actions/people";
+import Table from "../components/table";
 
 const LandingPage = ({ people, selectedPerson, selectPerson, fetchPeople }) => (
   <div>
-    <div>Hey, bro!</div>
-    <button onClick={() => fetchPeople()}>Get Data</button>
-    <ul>
-      {people.map(p => (
-        <li
-          key={p.id}
-          onClick={selectPerson(p.id)}
-          style={selectedPerson == p.id ? { color: "red" } : {}}
-        >
-          {p.name}
-        </li>
-      ))}
-    </ul>
+    <h2 className="title">People Directory</h2>
+    <Table rows={people} />
+    <style jsx>{`
+      .title {
+        color: #fff;
+        font-family: Roboto;
+        margin: 20px auto;
+        text-align: center;
+        font-size: 32px;
+      }
+    `}</style>
   </div>
 );
 
