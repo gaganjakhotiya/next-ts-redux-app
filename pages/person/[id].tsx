@@ -8,8 +8,10 @@ import { Button } from "@material-ui/core";
 const PersonPage = ({ person }: { person: Person }) => {
   return (
     <div>
-      <h2 className="title">About: {person.name}</h2>
-      <div>
+      <h2 className="title">{person.name}</h2>
+      <div className="details">
+        <div className="datapoint">Age: {person.age}</div>
+        <div className="datapoint">Sex: {person.sex}</div>
         <h3 className="tag">Available address:</h3>
         {person.addresses?.map((a, i) => (
           <div className="address" key={i}>
@@ -21,10 +23,6 @@ const PersonPage = ({ person }: { person: Person }) => {
           </div>
         ))}
       </div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
       <Button
         onClick={() => Router.back()}
         color="secondary"
@@ -39,15 +37,24 @@ const PersonPage = ({ person }: { person: Person }) => {
         }
         .title {
           margin: 20px auto;
-          text-align: center;
           font-size: 32px;
         }
         .tag {
           margin: 20px auto;
           font-size: 18px;
         }
+        .datapoint {
+          font-size: 18px;
+          margin-top: 10px;
+        }
+        .address {
+          margin-top: 20px;
+        }
         .address div {
-          font-size: 12px;
+          font-size: 14px;
+        }
+        .details {
+          margin-bottom: 30px;
         }
       `}</style>
     </div>
