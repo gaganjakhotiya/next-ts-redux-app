@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
 
+## Dev Support
+
+This project uses TypeScript, Redux, Redux-Thunk apart from the basic Next.js React setup.
+
 ## Getting Started
 
 First, run the development server:
